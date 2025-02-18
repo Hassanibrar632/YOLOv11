@@ -1,0 +1,10 @@
+kaggle
+matplotlib
+ultralytics
+pandas
+opencv-python
+flask
+numpy
+onnxruntime
+pillow
+requests
