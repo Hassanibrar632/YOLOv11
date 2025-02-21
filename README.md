@@ -1,6 +1,6 @@
 # YOLOv11 UAV Detection
 
-This repository contains code and resources for fine-tuning YOLOv11n on the HIT-UAV dataset to achieve optimal hyperparameters for UAV-based detection of humans, cars, bikes, and other entities using AI. This can be really helpfull from military point-of-view.
+This repository contains code and resources for fine-tuning YOLOv11n on the HIT-UAV dataset to achieve optimal hyperparameters for UAV-based detection of humans, cars, bikes, and other entities using AI.
 
 ## Table of Contents
 - [Overview](#overview)
@@ -8,6 +8,7 @@ This repository contains code and resources for fine-tuning YOLOv11n on the HIT-
 - [Usage](#usage)
 - [Training](#training)
 - [Model Conversion](#model-conversion)
+- [Folder Structure](#folder-structure)
 - [License](#license)
 - [Acknowledgments](#acknowledgments)
 
@@ -19,21 +20,13 @@ To set up the environment locally, follow these steps:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/Hassanibrar632/YOLOv11.git
-   cd YOLOv11
+   git clone https://github.com/your-repo-name.git
+   cd your-repo-name
    ```
 2. Install dependencies:
    ```bash
    pip install -r requirements.txt
    ```
-   > ### Warning:
-   > Should use a virtual env using python-env or conda to avoid any unexpected installation or libraries conflits.
-   > 
-   > This code was ran on colab.
-   > 
-   > Must have kaggle key to download the dataset.
-   > 
-   > Instruction are also mention in detail in the `.ipynb` file. 
 
 ## Usage
 Once the dependencies are installed, you can use the available scripts for training and model conversion.
@@ -49,6 +42,27 @@ The `convert_pt2onix.py` script converts trained YOLOv11n models from PyTorch (`
    python convert_pt2onix.py --weights path/to/model.pt
    ```
 
+## Folder Structure
+This repository contains several key folders:
+
+### `api/` - YOLOv11 Flask API
+- Contains scripts for setting up a REST API using Flask.
+- See [`api/README.md`](api/README.md) for setup and usage instructions.
+
+### `dataset/` - Sample Dataset
+- Contains example images, labels, and dataset configuration.
+- **Important:** Modify `dataset.yaml` as instructed in `YOLOv11_Trainning.ipynb`.
+- See [`dataset/README.md`](dataset/README.md) for more details.
+
+### `training_results/` - Training Metrics & Outputs
+- Stores training results, including hyperparameter tuning results, model weights, and evaluation metrics.
+- Contains performance plots such as loss curves, confusion matrices, and validation results.
+- See [`training_results/README.md`](training_results/README.md) for a detailed breakdown.
+
+### `kaggle/` - Kaggle API Token Setup
+- Contains instructions for setting up Kaggle API authentication.
+- See [`kaggle/README.md`](kaggle/README.md) for guidance on using `kaggle.json`.
+
 ## License
 This project is licensed under the MIT License.
 
@@ -58,5 +72,3 @@ This project is licensed under the MIT License.
 
 ---
 For any issues or improvements, feel free to submit a pull request or open an issue!
-
-
