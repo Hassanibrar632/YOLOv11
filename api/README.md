@@ -38,8 +38,6 @@ Alternatively, you can use `cURL`:
 The API returns a JSON response containing:
 - `message`: Status of inference
 - `detections`: List of detected objects with class, confidence, and bounding box
-- `original_image`: Base64-encoded original image
-- `output_image`: Base64-encoded image with bounding boxes
 
 Example Response:
 ```json
@@ -48,11 +46,12 @@ Example Response:
     "detections": [
         {"class": "car", "confidence": 0.95, "box": [30, 50, 200, 220]},
         {"class": "person", "confidence": 0.87, "box": [100, 150, 250, 400]}
-    ],
-    "orignal_image": "<base64_encoded_string>",
-    "output_image": "<base64_encoded_string>"
+    ]
 }
 ```
+
+## Realtime Inference:
+The code uses this flask-api to infer the frames of webcam and give output from the api inference results. The code uses webcam to capture image then encodes that into byte form and send that to the api, upon getting the results the api then draws the detections based on the results and shows the frame.
 
 ## Notes
 - The model is loaded in ONNX format by default (`models/best.onnx`). Modify `api.py` if using a `.pt` file.
